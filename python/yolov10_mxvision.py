@@ -31,8 +31,8 @@ def preprocess(device_id, image_path, model_width, model_height):
     y_offset = (model_height - border_h ) / 2
     # 补边尺寸 
     dim_para = Dim(int(round(x_offset - 0.1)), int(round(x_offset + 0.1)), int(round(y_offset + 0.1)), int(round(y_offset - 0.1)))
-    # 读取解码后的Image类按Dim进行补边，补边方式为重复最后一个元素  
-    padded_image = imageProcessor.padding(resized_image, dim_para, Color(114, 114, 114), base.border_constant)
+    # 读取解码后的Image类按Dim进行补边 
+    padded_image = imageProcessor.padding(resized_image, dim_para, Color(114, 128, 128), base.border_constant)
 
 
     # Image类转Tensor类

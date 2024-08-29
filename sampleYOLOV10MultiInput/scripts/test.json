@@ -5,7 +5,7 @@
             "model_config":[
                 {
                     "infer_thread_name":"infer_thread_0",
-                    "model_path":"../model/yolov7x.om",
+                    "model_path":"../model/yolov10m.om",
                     "model_width":640,
                     "model_heigth":640,
                     "io_info":[

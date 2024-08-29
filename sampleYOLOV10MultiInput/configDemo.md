@@ -21,14 +21,14 @@
 
 1. 下载获取输入图片，放在data目录下
 ```
-cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/data
+cd $HOME/samples/inference/modelInference/sampleYOLOV10MultiInput/data
 wget https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/models/aclsample/dog1_1024_683.jpg --no-check-certificate
 ```
 
 2. 修改配置文件中对应的input_path、input_type、output_path、output_type
 ```
 # 切换到配置文件所在目录
-cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
+cd $HOME/samples/inference/modelInference/sampleYOLOV10MultiInput/scripts
 #打开配置文件test.json进行修改
 ```
 ```
@@ -39,7 +39,7 @@ cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
             "model_config":[
                 {
                     "infer_thread_name":"infer_thread_0",
-                    "model_path":"../model/yolov7x.om",
+                    "model_path":"../model/yolov10m.om",
                     "model_width":640,
                     "model_heigth":640,
                     "model_batch":1,
@@ -70,14 +70,14 @@ bash sample_run.sh
 
 1. 下载获取输入视频，放在data目录下
 ```
-cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/data
+cd $HOME/samples/inference/modelInference/sampleYOLOV10MultiInput/data
 wget https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/YOLOV3_carColor_sample/data/car0.mp4 --no-check-certificate
 ```
 
 2. 修改配置文件中对应的input_path、input_type、output_path、output_type
 ```
 # 切换到配置文件所在目录
-cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
+cd $HOME/samples/inference/modelInference/sampleYOLOV10MultiInput/scripts
 #打开配置文件test.json进行修改
 ```
 ```
@@ -88,7 +88,7 @@ cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
             "model_config":[
                 {
                     "infer_thread_name":"infer_thread_0",
-                    "model_path":"../model/yolov7x.om",
+                    "model_path":"../model/yolov10m.om",
                     "model_width":640,
                     "model_heigth":640,
                     "model_batch":1,
@@ -148,7 +148,7 @@ wget https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/models/sampleResnetRtsp/te
 3. 修改配置文件中对应的input_path、input_type、output_path、output_type
 ```
 # 切换到配置文件所在目录
-cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
+cd $HOME/samples/inference/modelInference/sampleYOLOV10MultiInput/scripts
 #打开配置文件test.json进行修改
 ```
 ```
@@ -159,7 +159,7 @@ cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
             "model_config":[
                 {
                     "infer_thread_name":"infer_thread_0",
-                    "model_path":"../model/yolov7x.om",
+                    "model_path":"../model/yolov10m.om",
                     "model_width":640,
                     "model_heigth":640,
                     "model_batch":1,
@@ -185,14 +185,14 @@ cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
 
 1. 下载获取输入视频，放在data目录下
 ```
-cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/data
+cd $HOME/samples/inference/modelInference/sampleYOLOV10MultiInput/data
 wget https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/YOLOV3_carColor_sample/data/car0.mp4 --no-check-certificate
 ```
 
 2. 修改配置文件中对应的input_path、input_type、output_path、output_type
 ```
 # 切换到配置文件所在目录
-cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
+cd $HOME/samples/inference/modelInference/sampleYOLOV10MultiInput/scripts
 #打开配置文件test.json进行修改
 ```
 ```
@@ -203,7 +203,7 @@ cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
             "model_config":[
                 {
                     "infer_thread_name":"infer_thread_0",
-                    "model_path":"../model/yolov7x.om",
+                    "model_path":"../model/yolov10m.om",
                     "model_width":640,
                     "model_heigth":640,
                     "model_batch":1,
@@ -234,14 +234,14 @@ bash sample_run.sh
 
 1. 下载获取输入视频，放在data目录下
 ```
-cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/data
+cd $HOME/samples/inference/modelInference/sampleYOLOV10MultiInput/data
 wget https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/YOLOV3_carColor_sample/data/car0.mp4 --no-check-certificate
 ```
 
 2. 修改配置文件中对应的input_path、input_type、output_path、output_type
 ```
 # 切换到配置文件所在目录
-cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
+cd $HOME/samples/inference/modelInference/sampleYOLOV10MultiInput/scripts
 #打开配置文件test.json进行修改
 ```
 ```
@@ -252,7 +252,7 @@ cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
             "model_config":[
                 {
                     "infer_thread_name":"infer_thread_0",
-                    "model_path":"../model/yolov7x.om",
+                    "model_path":"../model/yolov10m.om",
                     "model_width":640,
                     "model_heigth":640,
                     "model_batch":1,
@@ -283,7 +283,7 @@ bash sample_run.sh
 
 1. 下载获取输入视频，放在data目录下
 ```
-cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/data
+cd $HOME/samples/inference/modelInference/sampleYOLOV10MultiInput/data
 wget https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/YOLOV3_carColor_sample/data/car0.mp4 --no-check-certificate
 ```
 
@@ -301,18 +301,18 @@ wget https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Mo
     2023/05/11 18:07:50 INF [WebRTC] listener opened on :8889 (HTTP)
     ```								
     服务开启后可以便可以使用ffmpeg进行推流到服务器上。
-    ![输入图片说明1](https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/sampleYolov7MultiInput/mediamtx%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B.png)
+    ![输入图片说明1](https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/sampleYolov10MultiInput/mediamtx%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B.png)
 
 3. 修改配置文件中对应的input_path、input_type、output_path、output_type
 
 ```
 # 切换到配置文件所在目录
-cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
+cd $HOME/samples/inference/modelInference/sampleYOLOV10MultiInput/scripts
 # 执行如下命令获取推流ip地址
 ifconfig
 #打开配置文件test.json根据ip地址进行修改
 ```
-![输入图片说明2](https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/sampleYolov7MultiInput/ip%E6%88%AA%E5%9B%BE%E7%A4%BA%E4%BE%8B.png)
+![输入图片说明2](https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/sampleYolov10MultiInput/ip%E6%88%AA%E5%9B%BE%E7%A4%BA%E4%BE%8B.png)
 ```
 {
     "device_config":[
@@ -321,7 +321,7 @@ ifconfig
             "model_config":[
                 {
                     "infer_thread_name":"infer_thread_0",
-                    "model_path":"../model/yolov7x.om",
+                    "model_path":"../model/yolov10m.om",
                     "model_width":640,
                     "model_heigth":640,
                     "model_batch":1,
@@ -355,9 +355,9 @@ ifconfig
     ```					
     smplayer
     ```
-    ![输入图片说明3](https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/sampleYolov7MultiInput/smplayer%E5%90%AF%E5%8A%A8%E6%88%AA%E5%9B%BE%E7%A4%BA%E4%BE%8B.png)
+    ![输入图片说明3](https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/sampleYolov10MultiInput/smplayer%E5%90%AF%E5%8A%A8%E6%88%AA%E5%9B%BE%E7%A4%BA%E4%BE%8B.png)
     smplayer窗口右键open>URL,输入URL地址：rtsp://192.168.1.214:8554/stream0 （URL地址由output_path+channel_id组成）
-    ![输入图片说明4](https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/sampleYolov7MultiInput/URL%E5%9C%B0%E5%9D%80%E6%88%AA%E5%9B%BE%E7%A4%BA%E4%BE%8B.png)
+    ![输入图片说明4](https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/sampleYolov10MultiInput/URL%E5%9C%B0%E5%9D%80%E6%88%AA%E5%9B%BE%E7%A4%BA%E4%BE%8B.png)
 
 5.执行样例运行脚本
 
@@ -371,13 +371,13 @@ bash sample_run.sh
 
 以样例使用模型为例，进行ATC转换时，修改参数选项--input_shape输入shape的batch数为4：
 ```
-atc --model=yolov7x.onnx --framework=5 --output=yolov7x --input_shape="images:4,3,640,640"  --soc_version=Ascend310  --insert_op_conf=aipp.cfg
+atc --model=yolov10m.onnx --framework=5 --output=yolov10m --input_shape="images:4,3,640,640"  --soc_version=Ascend310  --insert_op_conf=aipp.cfg
 ```
 
 2.修改配置文件中对应的model_batch
 ```
 # 切换到配置文件所在目录
-cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
+cd $HOME/samples/inference/modelInference/sampleYOLOV10MultiInput/scripts
 #打开配置文件test.json进行修改
 ```
 ```
@@ -388,7 +388,7 @@ cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
             "model_config":[
                 {
                     "infer_thread_name":"infer_thread_0",
-                    "model_path":"../model/yolov7x.om",
+                    "model_path":"../model/yolov10m.om",
                     "model_width":640,
                     "model_heigth":640,
                     "model_batch":4,
@@ -419,13 +419,13 @@ bash sample_run.sh
 
 对于单路数据输入，当前代码分为了dataInput、detectPreprocess、detectInference、detectPostprocess、dataOutput五个部分并行执行，性能瓶颈就会出现在这五个部分中耗时最长的线程里，而dataInput、detectPreprocess使用dvpp硬件加速，占用时长一般不会成为样例的运行瓶颈，而detectInference、detectPostprocess的运行时长就是我们优化样例的主力修改点了，当detectPostprocess远大于detectInference运行耗时时，增加后处理的个数，可以一定程度上优化样例性能。
 
-以样例使用模型为例，通过打印各线程process方法耗时分析修改test.json文件中yolov7x模型对应的后处理个数：
+以样例使用模型为例，通过打印各线程process方法耗时分析修改test.json文件中yolov10m模型对应的后处理个数：
 分析：通过打印每个阶段处理一帧的耗时，可以得到当前样例在310P上的detectInference每帧处理时长约为12ms，detectPostprocess每帧处理时长约为24ms，此时得到后处理个数为2时，样例整体运行耗时最短。故修改test.json如下，postnum数设置为2：
 
 1.修改配置文件中对应的postnum
 ```
 # 切换到配置文件所在目录
-cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
+cd $HOME/samples/inference/modelInference/sampleYOLOV10MultiInput/scripts
 #打开配置文件test.json进行修改
 ```
 ```
@@ -436,7 +436,7 @@ cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
             "model_config":[
                 {
                     "infer_thread_name":"infer_thread_0",
-                    "model_path":"../model/yolov7x.om",
+                    "model_path":"../model/yolov10m.om",
                     "model_width":640,
                     "model_heigth":640,
                     "model_batch":1,
@@ -480,7 +480,7 @@ bash sample_run.sh
                     # infer_thread_name：当前加载一路推理线程时所给到的对应的推理线程名称，由用户指定，infer_thread_name值必须互斥
                     "infer_thread_name":"infer_thread_0",
                     # model_path：当前推理线程所加载的离线模型路径，由用户指定
-                    "model_path":"../model/yolov7x.om",
+                    "model_path":"../model/yolov10m.om",
                     # model_width：当前推理线程所加载的离线模型的宽，由用户指定
                     "model_width":640,
                     # model_heigth：当前推理线程所加载的离线模型的高，由用户指定

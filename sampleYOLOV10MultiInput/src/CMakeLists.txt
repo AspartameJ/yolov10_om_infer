@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.5.1)
 
 # project information
-project(sampleYOLOV7MultiInput)
+project(sampleYOLOV10MultiInput)
 
 # Compile options
 add_compile_options(-std=c++11)

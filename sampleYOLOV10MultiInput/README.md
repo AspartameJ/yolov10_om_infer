@@ -11,19 +11,19 @@
   - [已知issue](#已知issue)
     
 ## 样例介绍
-功能：使用yolov7模型对输入数据进行预测推理，推理检测出图片/视频中所有可检测物体，并将推理结果打印到输出上，是一个是基于多路、多线程方案实现的高性能案例，通过多卡并行处理多路数的数据并输出，支持多种输入输出。    
+功能：使用yolov10模型对输入数据进行预测推理，推理检测出图片/视频中所有可检测物体，并将推理结果打印到输出上，是一个是基于多路、多线程方案实现的高性能案例，通过多卡并行处理多路数的数据并输出，支持多种输入输出。    
 样例输入：原始图片jpg文件/视频mp4文件/视频h26X文件/rtsp视频流。   
 样例输出：带推理结果的图片/带推理结果的视频文件/rtsp视频流展示/cv::imshow窗口展示/打屏显示。 
 
 ## 样例流程图
 通用目标检测与识别一站式方案是一个是基于多路、多线程方案实现的高性能案例，通过多卡并行处理多路数的数据并输出。
 其中整体流程图如下所示：
-![流程图](https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/sampleYolov7MultiInput/%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
+![流程图](https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/sampleYolov10MultiInput/%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 
 - 管理线程：将线程和队列打包在一起，并完成进程创建、消息队列创建、消息发送和消息接收守护。
 - 数据输入线程：对输入图片或视频进行解码。
 - 数据预处理线程：对数据输入线程传过来的YUV图片进行处理（resize等操作）。
-- 推理线程：使用YOLOV7模型进行推理。
+- 推理线程：使用YOLOV10模型进行推理。
 - 数据后处理线程：分析推理结果，输出框点及标签信息。
 - 数据输出线程：将框点及标签信息标识到输出数据上。
 
@@ -159,29 +159,29 @@
     请从以下链接获取该样例的输入视频，放在data目录下。
         
     ```    
-    cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/data
+    cd $HOME/samples/inference/modelInference/sampleYOLOV10MultiInput/data
     wget https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/YOLOV3_carColor_sample/data/car0.mp4 --no-check-certificate
     ```
 
   - ATC模型转换
 
-    将yolov7原始模型转换为适配昇腾310处理器的离线模型（\*.om文件），放在model路径下。
+    将yolov10原始模型转换为适配昇腾310处理器的离线模型（\*.om文件），放在model路径下。
    
     ```
     # 为了方便下载，在这里直接给出原始模型下载及模型转换命令,可以直接拷贝执行。
-    cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/model
-    # 下载yolov7的原始模型文件及AIPP配置文件
-    wget https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/yolov7/yolov7x.onnx --no-check-certificate
-    wget https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/yolov7/aipp.cfg --no-check-certificate
+    cd $HOME/samples/inference/modelInference/sampleYOLOV10MultiInput/model
+    # 下载yolov10的原始模型文件及AIPP配置文件
+    wget https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/yolov10/yolov10m.onnx --no-check-certificate
+    wget https://obs-9be7.obs.cn-east-2.myhuaweicloud.com/003_Atc_Models/yolov10/aipp.cfg --no-check-certificate
     # 请使用与芯片名相对应的<soc_version>取值进行模型转换，然后再进行推理
-    atc --model=yolov7x.onnx --framework=5 --output=yolov7x --input_shape="images:1,3,640,640"  --soc_version=Ascend310  --insert_op_conf=aipp.cfg
+    atc --model=yolov10m.onnx --framework=5 --output=yolov10m --input_shape="images:1,3,640,640"  --soc_version=Ascend310  --insert_op_conf=aipp.cfg
     ```
 
   - 样例编译
 
     执行以下命令，执行编译脚本，开始样例编译。
     ```
-    cd $HOME/samples/inference/modelInference/sampleYOLOV7MultiInput/scripts
+    cd $HOME/samples/inference/modelInference/sampleYOLOV10MultiInput/scripts
     bash sample_build.sh
     ```
 
@@ -219,8 +219,8 @@
   | 时间 | 更新事项 |
 |----|------|
 | 2023/05/16| 案例新增功能点：模型多batch、单路输入支持1-4路后处理，imshow输出展示 |
-| 2023/05/16| 修改sampleYOLOV7MultiInput/README.md，新增样例配置文件说明configDemo.md |
-| 2023/03/28| 新增sampleYOLOV7MultiInput/README.md |
+| 2023/05/16| 修改sampleYOLOV10MultiInput/README.md，新增样例配置文件说明configDemo.md |
+| 2023/03/28| 新增sampleYOLOV10MultiInput/README.md |
   
 
 ## 已知issue

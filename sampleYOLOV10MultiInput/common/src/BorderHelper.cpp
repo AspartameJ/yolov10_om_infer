@@ -157,7 +157,7 @@ AclLiteError BorderHelper::Process(ImageData& borderImage, ImageData& srcImage)
     uint32_t borderBottomOffset = totalHeightDiff - borderTopOffset;
 
 
-    aclRet = acldvppSetBorderConfigBorderType(borderConfig_, borderType);
+    aclError aclRet = acldvppSetBorderConfigBorderType(borderConfig_, borderType);
     if (atlRet != ACLLITE_OK) {
         ACLLITE_LOG_ERROR("[ERROR] acldvppSetBorderConfigBorderType failed. ERROR: %d", aclRet);
         return atlRet;

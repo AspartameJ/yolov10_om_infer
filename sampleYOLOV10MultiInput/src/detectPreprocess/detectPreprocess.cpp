@@ -102,7 +102,7 @@ AclLiteError DetectPreprocessThread::MsgProcess(shared_ptr<DetectDataMsg> detect
     for (int i = 0; i < detectDataMsg->decodedImg.size(); i++) {
         ImageData resizedImg, BorderImg;
         // 图像尺寸调整
-        float scale = min(modelWidth_ / detectDataMsg->decodedImg[i].width, modelHeight_ / detectDataMsg->decodedImg[i].height);
+        float scale = min(modelWidth_ * 1.0 / detectDataMsg->decodedImg[i].width * 1.0, modelHeight_ * 1.0 / detectDataMsg->decodedImg[i].height * 1.0);
         uint32_t resizeWidth = scale * detectDataMsg->decodedImg[i].width;
         uint32_t resizeHeight = scale * detectDataMsg->decodedImg[i].height;
         

@@ -184,7 +184,7 @@ AclLiteError BorderHelper::Process(ImageData& borderImage, ImageData& srcImage)
     }
     for(uint32_t borderIndex = 0; borderIndex < 3; borderIndex++)
     {
-        aclRet = acldvppSetBorderConfigValue(borderConfig_, borderIndex, borderValue[borderIndex])
+        aclRet = acldvppSetBorderConfigValue(borderConfig_, borderIndex, borderValue[borderIndex]);
         if (atlRet != ACLLITE_OK) {
             ACLLITE_LOG_ERROR("[ERROR] acldvppSetBorderConfigValue failed. ERROR: %d", aclRet);
             return atlRet;
@@ -192,7 +192,7 @@ AclLiteError BorderHelper::Process(ImageData& borderImage, ImageData& srcImage)
     }
 
     // border pic
-    aclError aclRet = acldvppVpcMakeBorderAsync(dvppChannelDesc_, vpcInputDesc_,
+    aclRet = acldvppVpcMakeBorderAsync(dvppChannelDesc_, vpcInputDesc_,
                                             vpcOutputDesc_, borderConfig_, stream_);
     if (aclRet != ACL_SUCCESS) {
         ACLLITE_LOG_ERROR("acldvppVpcBorderAsync failed, error: %d", aclRet);

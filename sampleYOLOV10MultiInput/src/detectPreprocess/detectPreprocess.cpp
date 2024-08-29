@@ -100,18 +100,28 @@ AclLiteError DetectPreprocessThread::MsgProcess(shared_ptr<DetectDataMsg> detect
     // 遍历解码后的图像数据，进行resize并拷贝到批次缓冲区
     size_t pos = 0;
     for (int i = 0; i < detectDataMsg->decodedImg.size(); i++) {
-        ImageData resizedImg;
+        ImageData resizedImg, BorderImg;
         // 图像尺寸调整
+        float scale = min(modelWidth_ / detectDataMsg->decodedImg[i].width, modelHeight_ / detectDataMsg->decodedImg[i].height);
+        uint32_t resizeWidth = scale * detectDataMsg->decodedImg[i].width;
+        uint32_t resizeHeight = scale * detectDataMsg->decodedImg[i].height;
+        
         ret = dvpp_.Resize(resizedImg,
-            detectDataMsg->decodedImg[i], modelWidth_, modelHeight_);
+            detectDataMsg->decodedImg[i], resizeWidth, resizeHeight);
         if (ret == ACLLITE_ERROR) {
             ACLLITE_LOG_ERROR("Resize image failed");
+            return ACLLITE_ERROR;
+        }
+        ret = dvpp_.Border(BorderImg,
+        resizedImg, modelWidth_, modelHeight_);
+        if (ret == ACLLITE_ERROR) {
+            ACLLITE_LOG_ERROR("Border image failed");
             return ACLLITE_ERROR;
         }
         // 将调整大小后的图像数据拷贝到批次缓冲区
         uint32_t dataSize = YUV420SP_SIZE(modelWidth_, modelHeight_);
         ret = aclrtMemcpy(batchBuffer + pos, dataSize,
-        resizedImg.data.get(), resizedImg.size, ACL_MEMCPY_DEVICE_TO_DEVICE);
+        BorderImg.data.get(), BorderImg.size, ACL_MEMCPY_DEVICE_TO_DEVICE);
         pos = pos + dataSize;
     }
 

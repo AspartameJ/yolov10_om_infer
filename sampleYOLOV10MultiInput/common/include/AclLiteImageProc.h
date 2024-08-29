@@ -137,6 +137,17 @@ public:
     */
     AclLiteError ProportionPasteCenter(ImageData& dest, ImageData& src,
                                        uint32_t width, uint32_t height);
+    /**
+    * @brief make border the image to size (width, height)
+    * @param [in]: dest: border image
+    * @param [in]: src: original image
+    * @param [in]: width: border image width
+    * @param [in]: height: border image height
+    * @return AclLiteError ACLLITE_OK: read success
+    * others: make border failed
+    */
+    AclLiteError Border(ImageData& dest, ImageData& src,
+                        uint32_t width, uint32_t height);
     void DestroyResource();
 
 protected:

@@ -23,6 +23,7 @@
 #include "JpegDHelper.h"
 #include "JpegEHelper.h"
 #include "PngDHelper.h"
+#include "BorderHelper.h"
 #include "AclLiteImageProc.h"
 #include "CropAndPasteHelper.h"
 
@@ -170,4 +171,11 @@ AclLiteError AclLiteImageProc::JpegE(ImageData& dest, ImageData& src)
 {
     JpegEHelper jpegE(stream_, dvppChannelDesc_);
     return jpegE.Process(dest, src);
+}
+
+AclLiteError AclLiteImageProc::Border(ImageData& dest, ImageData& src,
+                                      uint32_t width, uint32_t height)
+{
+    BorderHelper border(stream_, dvppChannelDesc_, width, height);
+    return border.Process(dest, src);
 }

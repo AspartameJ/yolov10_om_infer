@@ -108,6 +108,10 @@ AclLiteError DetectPostprocessThread::InferOutputProcess(shared_ptr<DetectDataMs
         int srcWidth = detectDataMsg->decodedImg[n].width;
         int srcHeight = detectDataMsg->decodedImg[n].height;
 
+        float scale = min(modelWidth_ * 1.0 / srcWidth * 1.0, modelHeight_ * 1.0 / srcHeight * 1.0);
+        uint32_t borderLeftOffset = (modelWidth_ - scale * srcWidth) / 2;
+        uint32_t borderTopOffset = (modelHeight_ - scale * srcHeight) / 2;        
+
         // filter boxes by confidence threshold
         vector <BoundBox> result;
         result.clear();
@@ -121,10 +125,10 @@ AclLiteError DetectPostprocessThread::InferOutputProcess(shared_ptr<DetectDataMs
             float confidence = detectBuff[i * totalNumber + confidenceIndex];
             if (confidence >= confidenceThreshold) {
                 BoundBox box;
-                box.left = detectBuff[i * totalNumber + leftIndex] * srcWidth / modelWidth_;
-                box.top = detectBuff[i * totalNumber + topIndex] * srcHeight / modelHeight_;
-                box.right = detectBuff[i * totalNumber + rightIndex] * srcWidth/modelWidth_;
-                box.bottom = detectBuff[i * totalNumber + bottomIndex] * srcHeight / modelHeight_;
+                box.left = (detectBuff[i * totalNumber + leftIndex] - borderLeftOffset) / scale;
+                box.top = (detectBuff[i * totalNumber + topIndex] - borderTopOffset) / scale;
+                box.right = (detectBuff[i * totalNumber + rightIndex] - borderLeftOffset) / scale;
+                box.bottom = (detectBuff[i * totalNumber + bottomIndex] - borderTopOffset) / scale;
                 box.score = confidence;
                 box.classIndex = detectBuff[i * totalNumber + classIndex];
                 box.index = i;

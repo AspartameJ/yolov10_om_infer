@@ -82,5 +82,4 @@ ENV/
 *.h265
 *.bin
 *.mp4
-*.jpg
 *.pyc

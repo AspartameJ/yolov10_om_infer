@@ -25,8 +25,8 @@
 using namespace std;
 
 namespace {
-const uint32_t kOutputWidth = 540;
-const uint32_t kOutputHeigth = 270;
+const uint32_t kOutputWidth = 640;
+const uint32_t kOutputHeigth = 320;
 const uint32_t kSleepTime = 500;
 uint32_t kWaitTime = 1000;
 const uint32_t kOneSec = 1000000;

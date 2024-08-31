@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 import datetime
 import os
 import numpy as np
@@ -156,7 +158,7 @@ def main():
         image_path = os.path.join(input_folder, 'test.jpg')
         image_infer(image_path, model, output_folder)
     elif mode == "video":
-        video_path = os.path.join(input_folder, '8549588-hd_1080_1920_25fps.mp4')
+        video_path = os.path.join(input_folder, 'live.mp4')
         video_infer(video_path, model, output_folder)
     else:
         print('input mode is incorrect.')

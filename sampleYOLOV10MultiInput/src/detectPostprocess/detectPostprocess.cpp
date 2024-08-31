@@ -28,7 +28,7 @@ using namespace std;
 
 namespace {
     const uint32_t kSleepTime = 500;
-    const double kFountScale = 0.5;
+    const double kFountScale = 1;
     const cv::Scalar kFountColor(0, 0, 255);
     const uint32_t kLabelOffset = 11;
     const uint32_t kLineSolid = 2;
